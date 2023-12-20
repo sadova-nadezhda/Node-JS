@@ -55,6 +55,7 @@ async function createFile() {
 }
 createFile()
 
-
-const isFile = info.isFile(); // true
-const isDirectory = info.isDirectory(); // false
+// Проверка файла или папки
+// let info = './files/test/info2.txt'
+// const isFile = info.isFile(); // true
+// const isDirectory = info.isDirectory(); // false
