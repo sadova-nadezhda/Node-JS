@@ -47,3 +47,7 @@ function fun4() {
   console.log(out)
 }
 // fun4()
+
+// Получить абсолютный путь
+const dirPath = path.join(__dirname, 'files');
+console.log(dirPath)
