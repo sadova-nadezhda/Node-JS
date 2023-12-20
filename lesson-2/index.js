@@ -46,16 +46,22 @@ const path = require('path');
 // })
 
 // async await
-let promises = fs.promises;
-async function createFile() {
-  const data = await promises.readFile('./files/info.txt', 'utf-8')
-  // const new_data = data + 'String'
-  await promises.mkdir('./files/test')
-  await promises.writeFile('./files/test/info2.txt', `${data}`)
-}
-createFile()
+// let promises = fs.promises;
+// async function createFile() {
+//   const data = await promises.readFile('./files/info.txt', 'utf-8')
+//   // const new_data = data + 'String'
+//   await promises.mkdir('./files/test')
+//   await promises.writeFile('./files/test/info2.txt', `${data}`)
+// }
+// createFile()
 
 // Проверка файла или папки
 // let info = './files/test/info2.txt'
 // const isFile = info.isFile(); // true
 // const isDirectory = info.isDirectory(); // false
+
+// Переименование файла
+// fs.rename('./files/img.png', './files/new-img.png', (err) => {
+//   if (err) throw err;
+//   console.log('File renamed!');
+// });
