@@ -1,31 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact</title>
-  <link rel="stylesheet" href="/css/style.css">
-</head>
+<%- include('../partials/head.ejs') %>
 
-<body>
-  <%- include('../partials/header.ejs') %>
-    <main>
-      <section class="contact section">
-        <div class="container">
-          <div class="contact__container wrapper">
-            <h1 class="contact__title title">Contact Page</h1>
-            <div class="contact__desc desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est ut odit veniam
-              itaque
-              facere nostrum
-              quisquam aut odio laboriosam doloribus praesentium quam amet, qui iusto repellat nihil adipisci?
-              Laboriosam,
-              recusandae?</div>
+  <body>
+    <%- include('../partials/header.ejs') %>
+      <main>
+        <section class="contact section">
+          <div class="container">
+            <div class="contact__container wrapper">
+              <h1 class="contact__title title">Contact Page</h1>
+              <ul>
+                <% if (socials.length) { %>
+                  <% socials.forEach( ({name, link})=> { %>
+                    <li><a href="<%= link%>"> <%= name%> </a></li>
+                  <% }) %>
+                <% } %>
+              </ul>
+            </div>
           </div>
-        </div>
-      </section>
-    </main>
-    <%- include('../partials/footer.ejs') %>
-</body>
+        </section>
+      </main>
+      <%- include('../partials/footer.ejs') %>
+  </body>
 
 </html>

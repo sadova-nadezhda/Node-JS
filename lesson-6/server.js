@@ -16,24 +16,35 @@ app.use(express.urlencoded({
 }));
 
 app.get('/', (req, res) => {
-  res.render(createParh('index'));
+  const title = 'Home'
+  res.render(createParh('index'), { title });
 });
 app.get('/news', (req, res) => {
-  res.render(createParh('news'));
+  const title = 'News'
+  res.render(createParh('news'), { title });
 });
 app.get('/news/:id', (req, res) => {
-  res.render(createParh('news-inner'));
+  const title = 'News Inner'
+  res.render(createParh('news-inner'), { title });
 });
 app.get('/news-app', (req, res) => {
-  res.render(createParh('news-app'));
+  const title = 'News App'
+  res.render(createParh('news-app'), { title });
 });
 app.get('/contact', (req, res) => {
-  res.render(createParh('contact'));
+  const title = 'Contact'
+  const socials = [
+    { name: 'YouTube', link: 'https://www.youtube.com/' },
+    { name: 'Github', link: 'https://github.com/' },
+    { name: 'Telegram', link: 'https://web.telegram.org/' },
+  ]
+  res.render(createParh('contact'), { title, socials });
 });
 app.use((req, res) => {
+  const title = 'PageNotFound'
   res
     .status(404)
-    .render(createParh('404'))
+    .render(createParh('404'), { title })
 });
 
 app.listen(port, () => {
