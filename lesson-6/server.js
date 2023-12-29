@@ -16,21 +16,24 @@ app.use(express.urlencoded({
 }));
 
 app.get('/', (req, res) => {
-  res.sendFile(createParh('index'));
+  res.render(createParh('index'));
 });
 app.get('/news', (req, res) => {
-  res.sendFile(createParh('news'));
+  res.render(createParh('news'));
 });
 app.get('/news/:id', (req, res) => {
-  res.sendFile(createParh('news-inner'));
+  res.render(createParh('news-inner'));
+});
+app.get('/news-app', (req, res) => {
+  res.render(createParh('news-app'));
 });
 app.get('/contact', (req, res) => {
-  res.sendFile(createParh('contact'));
+  res.render(createParh('contact'));
 });
 app.use((req, res) => {
   res
     .status(404)
-    .sendFile(createParh('404'))
+    .render(createParh('404'))
 });
 
 app.listen(port, () => {

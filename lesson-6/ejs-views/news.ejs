@@ -9,10 +9,23 @@
 </head>
 
 <body>
-  <h1 class="title">About Page</h1>
-  <div class="txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est ut odit veniam itaque facere nostrum
-    quisquam aut odio laboriosam doloribus praesentium quam amet, qui iusto repellat nihil adipisci? Laboriosam,
-    recusandae?</div>
+  <%- include('../partials/header.ejs') %>
+    <main>
+      <section class="news section">
+        <div class="container">
+          <div class="news__container wrapper">
+            <h1 class="news__title title">News Page</h1>
+            <div class="contact__desc desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est ut odit veniam
+              itaque
+              facere nostrum
+              quisquam aut odio laboriosam doloribus praesentium quam amet, qui iusto repellat nihil adipisci?
+              Laboriosam,
+              recusandae?</div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <%- include('../partials/footer.ejs') %>
 </body>
 
 </html>

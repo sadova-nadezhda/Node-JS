@@ -9,16 +9,23 @@
 </head>
 
 <body>
-  <h1 class="title">Main Page</h1>
-  <div class="txt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est ut odit veniam itaque facere nostrum
-    quisquam aut odio laboriosam doloribus praesentium quam amet, qui iusto repellat nihil adipisci? Laboriosam,
-    recusandae?</div>
-  <br /><br />
-  <ul>
-    <li><a href="http://localhost:3000/">Home</a></li>
-    <li><a href="http://localhost:3000/about">About</a></li>
-    <li><a href="http://localhost:3000/contact">Contact</a></li>
-  </ul>
+  <%- include('../partials/header.ejs') %>
+    <main>
+      <section class="hero section">
+        <div class="container">
+          <div class="hero__container wrapper">
+            <h1 class="hero__title title">Main Page</h1>
+            <div class="hero__desc desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est ut odit veniam
+              itaque
+              facere nostrum
+              quisquam aut odio laboriosam doloribus praesentium quam amet, qui iusto repellat nihil adipisci?
+              Laboriosam,
+              recusandae?</div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <%- include('../partials/footer.ejs') %>
 </body>
 
 </html>

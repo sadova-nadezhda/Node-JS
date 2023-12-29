@@ -6,20 +6,85 @@
 
 html {
   font-size: 20px;
+  font-weight: 500;
 }
 
 body {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   min-height: 100vh;
 }
 
-.title {
-  margin-bottom: 30px;
+main {
+  flex-grow: 1;
 }
 
-.txt {
-  max-width: 980px;
+.container {
+  max-width: 80%;
+  padding: 0 16px;
+  margin: 0 auto;
+}
+
+.section {
+  padding: 150px 0;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  min-height: 63vh;
+  text-align: center;
+}
+
+.title {
+  color: cadetblue;
+}
+
+.desc {
+  max-width: 70%;
+  margin: 0 auto;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 9;
+  background-color: cadetblue;
+}
+
+.header__container {
+  display: flex;
+  justify-content: end;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.header__menu {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+}
+
+.header__menu a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer {
+  color: #fff;
+  background-color: cadetblue;
+}
+
+.footer__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px 0;
 }
