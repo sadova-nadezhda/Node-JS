@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const News = require('./models/post');
 const { error } = require('console');
 
 const port = 3000;
@@ -57,14 +58,14 @@ app.get('/news-app', (req, res) => {
 });
 app.post('/news-app', (req, res) => {
   const { title, author, text } = req.body;
-  const post = {
-    id: new Date(),
-    date: (new Date()).toLocaleDateString(),
-    title,
-    author,
-    text
-  }
-  res.render(createParh('news-inner'), { title, post });
+  const post = new News({ title, author, text })
+  post
+    .save()
+    .then((result) => res.send(result))
+    .catch((error) => {
+      console.log(error)
+      res.render(createParh('404'), { title: 'Error' });
+    })
 });
 app.get('/contact', (req, res) => {
   const title = 'Contact'
