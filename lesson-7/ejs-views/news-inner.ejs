@@ -9,15 +9,19 @@
         <section class="news section">
           <div class="container">
             <div class="news__container wrapper">
+              <h1 class="news__title title">
+                <%= post.title %>
+              </h1>
               <div class="news__meta">
-                <div class="news__author">News Autor</div>
-                <div class="news__date">12.12.2023</div>
+                <div class="news__author">
+                  <%= post.author %>
+                </div>
+                <div class="news__date">
+                  <%= post.date || 'No date' %>
+                </div>
               </div>
-              <h1 class="news__title title">News Inner Page</h1>
               <div class="news__desc">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam mollitia impedit, a eaque,
-                laboriosam accusantium minima cumque quasi, optio molestiae quidem labore quae nam porro hic deserunt
-                sit. Iusto, vitae.
+                <%= post.text %>
               </div>
             </div>
           </div>

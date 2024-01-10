@@ -11,16 +11,26 @@
             <div class="news__container wrapper">
               <h1 class="news__title title">News Page</h1>
               <div class="news__cards">
-                <div class="news__card">
-                  <div class="news__title">News Title</div>
-                  <div class="news__desc">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente, unde.
-                  </div>
-                  <div class="news__meta">
-                    <div class="news__author">News Autor</div>
-                    <div class="news__date">12.12.2023</div>
-                  </div>
-                </div>
+                <% if (posts.length) { %>
+                  <% posts.forEach(({id, title, date, text, author})=> { %>
+                    <a class="news__card" href="/news/<%= id %>">
+                      <h4 class="news__caption">
+                        <%= title %>
+                      </h4>
+                      <div class="news__desc">
+                        <%= text %>
+                      </div>
+                      <div class="news__meta">
+                        <div class="news__author">
+                          <%= author %>
+                        </div>
+                        <div class="news__date">
+                          <%= date %>
+                        </div>
+                      </div>
+                    </a>
+                  <% }) %>
+                <% } %>
               </div>
             </div>
           </div>

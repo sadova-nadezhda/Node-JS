@@ -88,3 +88,64 @@ main {
   gap: 20px;
   padding: 10px 0;
 }
+
+.news__cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.news__card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  color: #000;
+  background-color: #f4f4f4;
+  text-decoration: none;
+}
+
+.news__caption {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.news__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.news__form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 450px;
+  padding: 30px;
+  background-color: #f4f4f4;
+}
+
+.form__info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.news__form label {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 4px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px 20px;
+}
+
+textarea {
+  resize: none;
+  height: 90px;
+}
