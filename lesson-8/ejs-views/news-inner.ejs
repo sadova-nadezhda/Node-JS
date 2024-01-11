@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head.ejs') %>
+
+  <body>
+    <%- include('../partials/header.ejs') %>
+      <main>
+        <section class="news section">
+          <div class="container">
+            <div class="news__container wrapper">
+              <h1 class="news__title title">
+                <%= post.title %>
+              </h1>
+              <div class="news__meta">
+                <div class="news__author">
+                  <%= post.author %>
+                </div>
+                <div class="news__date">
+                  <%= post.date || 'No date' %>
+                </div>
+              </div>
+              <div class="news__desc">
+                <%= post.text %>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <%- include('../partials/footer.ejs') %>
+  </body>
+
+</html>
