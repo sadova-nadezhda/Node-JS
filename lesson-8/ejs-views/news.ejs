@@ -12,11 +12,13 @@
               <h1 class="news__title title">News Page</h1>
               <div class="news__cards">
                 <% if (posts.length) { %>
-                  <% posts.forEach(({id, title, date, text, author})=> { %>
-                    <a class="news__card" href="/news/<%= id %>">
-                      <h4 class="news__caption">
-                        <%= title %>
-                      </h4>
+                  <% posts.forEach(({id, title, createdAt, text, author})=> { %>
+                    <div class="news__card">
+                      <a href="/news/<%= id %>">
+                        <h4 class="news__caption">
+                          <%= title %>
+                        </h4>
+                      </a>
                       <div class="news__desc">
                         <%= text %>
                       </div>
@@ -25,18 +27,35 @@
                           <%= author %>
                         </div>
                         <div class="news__date">
-                          <%= date %>
+                          <%= createdAt.toLocaleDateString() %>
                         </div>
                       </div>
-                    </a>
-                  <% }) %>
-                <% } %>
+                      <button сlass="news__btn" data-id="<%= id%>">Удалить</button>
+                    </div>
+                    <% }) %>
+                      <% } %>
               </div>
             </div>
-          </div>
         </section>
       </main>
       <%- include('../partials/footer.ejs') %>
+
+        <script>
+          document.addEventListener('click', (e) => {
+            const id = e.target?.dataset?.id || null;
+            if (id) {
+              fetch(`/news/${id}`, {
+                method: 'DELETE',
+              })
+                .then(() => {
+                  window.location.reload();
+                })
+                .catch((error) => {
+                  console.log(error)
+                })
+            }
+          })
+        </script>
   </body>
 
 </html>
