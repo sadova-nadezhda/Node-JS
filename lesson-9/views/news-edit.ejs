@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head.ejs') %>
+
+  <body>
+    <%- include('../partials/header.ejs') %>
+      <main>
+        <section class="news section">
+          <div class="container">
+            <div class="news__container wrapper">
+              <h1 class="news__title title">News App Page</h1>
+              <form class="news__form form" id="form-news" method="post" action="/edit/<%= post.id%>?_method=PUT">
+                <div class="form__info">
+                  <label>News Title
+                    <input type="text" name="title" value="<%= post.title%>">
+                  </label>
+                  <label>Author
+                    <input type="text" name="author" value="<%= post.author%>">
+                  </label>
+                </div>
+                <div class="form__text">
+                  <label>News Text
+                    <textarea name="text"><%= post.text%></textarea>
+                  </label>
+                </div>
+                <div class="form__button">
+                  <input type="submit" value="Submit">
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+      </main>
+      <%- include('../partials/footer.ejs') %>
+  </body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head.ejs') %>
+
+  <body>
+    <%- include('../partials/header.ejs') %>
+      <main>
+        <section class="news section">
+          <div class="container">
+            <div class="news__container wrapper">
+              <h1 class="news__title title">
+                <%= post.title %>
+              </h1>
+              <div class="news__meta">
+                <div class="news__author">
+                  <%= post.author %>
+                </div>
+                <div class="news__date">
+                  <%= post.createdAt.toLocaleDateString() || 'No date' %>
+                </div>
+              </div>
+              <div class="news__desc">
+                <%= post.text %>
+              </div>
+              <div class="news__btns">
+                <button class="news__btn" data-id="<%= post.id%>">Удалить</button>
+                <a href="/edit/<%= post.id %>">Редактирование</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <%- include('../partials/footer.ejs') %>
+        <script>
+          document.addEventListener('click', (e) => {
+            const id = e.target?.dataset?.id || null;
+            if (id) {
+              fetch(`/news/${id}`, {
+                method: 'DELETE',
+              })
+                .then(() => {
+                  window.location.href = '/news';
+                })
+                .catch((error) => {
+                  console.log(error)
+                })
+            }
+          })
+        </script>
+  </body>
+
+</html>
