@@ -1,0 +1,162 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex-grow: 1;
+}
+
+.container {
+  max-width: 80%;
+  padding: 0 16px;
+  margin: 0 auto;
+}
+
+.section {
+  padding: 120px 0;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 24px 38px;
+  border: 1px solid #FF4D01;
+  background-color: #FF4D01;
+  color: #fff;
+  text-decoration: none;
+
+  &_light {
+    border-color: #fff;
+    background-color: transparent;
+  }
+}
+
+/*------------ HEADER ------------*/
+.header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 9;
+  color: #fff;
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px 0;
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    list-style: none;
+
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+}
+
+
+/*------------ FOOTER ------------*/
+.footer {
+  color: #fff;
+  background-color: #000000;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px 0;
+  }
+
+  &__copy {
+    color: #989899;
+  }
+
+  &__desc {
+    a {
+      color: #FF4D01;
+    }
+  }
+}
+
+/*------------ HERO ------------*/
+.hero {
+  position: relative;
+
+  &__back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 600px;
+    max-width: 660px;
+    margin: 0 auto;
+    color: #fff;
+    text-align: center;
+  }
+
+  &__title {
+    margin-bottom: 16px;
+    font-size: 72px;
+  }
+
+  &__desc {
+    margin-bottom: 35px;
+  }
+
+  &__links {
+    display: flex;
+    gap: 20px;
+  }
+}
